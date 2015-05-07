@@ -1,13 +1,10 @@
 package com.hdsx.dao.data.wapper;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Map;
 
 import com.esri.sde.sdk.client.SeColumnDefinition;
 import com.esri.sde.sdk.client.SeException;
-import com.esri.sde.sdk.client.SeRasterAttr;
 import com.esri.sde.sdk.client.SeRow;
 import com.esri.sde.sdk.client.SeShape;
 import com.hdsx.dao.data.Feature;
