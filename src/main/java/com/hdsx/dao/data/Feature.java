@@ -3,14 +3,17 @@ package com.hdsx.dao.data;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.vividsolutions.jts.geom.Geometry;
+
 
 public class Feature {
 
 	private Map<String,Object> attributes=new LinkedHashMap<String,Object>();
 	
-	private String wkt;
 
 	private byte[] wkb;
+	
+	private Geometry shape;
 	
 	public Map<String, Object> getAttributes() {
 		return attributes;
@@ -20,13 +23,6 @@ public class Feature {
 		this.attributes = attributes;
 	}
 
-	public String getWkt() {
-		return wkt;
-	}
-
-	public void setWkt(String wkt) {
-		this.wkt = wkt;
-	}
 
 	public byte[] getWkb() {
 		return wkb;
@@ -34,6 +30,14 @@ public class Feature {
 
 	public void setWkb(byte[] wkb) {
 		this.wkb = wkb;
+	}
+
+	public Geometry getShape() {
+		return shape;
+	}
+
+	public void setShape(Geometry shape) {
+		this.shape = shape;
 	}
 
 

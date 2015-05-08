@@ -13,15 +13,15 @@ import com.hdsx.dao.data.type.handler.StringHandler;
 
 
 
-public class TypeConfig {
+public class TypeHandlerRegistry {
 
 	private List<String> typeHandlerList=new ArrayList<String>();
 	
 	private IChainHandler ich;
 	
-	private static TypeConfig DBCONFIG;
+	private static TypeHandlerRegistry handlerRegistry;
 	
-	private TypeConfig(){
+	private TypeHandlerRegistry(){
 		try 
 		{
 			registerChainHandler();
@@ -29,13 +29,13 @@ public class TypeConfig {
 			e.printStackTrace();
 		}
 	}
-	public static TypeConfig getInstance()
+	public static TypeHandlerRegistry getInstance()
 	{
-		if(DBCONFIG==null)
+		if(handlerRegistry==null)
 		{
-			DBCONFIG=new TypeConfig();
+			handlerRegistry=new TypeHandlerRegistry();
 		}
-		return DBCONFIG;
+		return handlerRegistry;
 	}
 	public IChainHandler getTypeHandlerChainHandler() {
 		return ich;
