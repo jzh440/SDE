@@ -11,7 +11,7 @@ public class ChainHandler implements IChainHandler{
 		Object value = null;
 		if(typeHandler.getReturnType().equals(javaType.getJavaType()))
 		{
-			 return value=typeHandler.convert(javaType,source);
+			 return value=typeHandler.convert(source);
 		}
 		else
 		{

@@ -13,6 +13,9 @@ import com.hdsx.dao.data.Feature;
  */
 public class ModifyParameter extends Parameters {
 
+	private Feature feature;
+	
+	private List<Feature> features;
 	/**
 	 * The Constructor.
 	 */
@@ -25,7 +28,8 @@ public class ModifyParameter extends Parameters {
 	 * @param layerName the layer name
 	 */
 	public ModifyParameter(Feature feature,String layerName){
-		super(feature,layerName,CRUD.TYPE_INSERT);
+		super(layerName,CRUD.TYPE_INSERT);
+		this.feature=feature;
 	}
 	
 	/**
@@ -35,7 +39,8 @@ public class ModifyParameter extends Parameters {
 	 * @param layerName the layer name
 	 */
 	public ModifyParameter(List<Feature> features,String layerName){
-		super(features,layerName,CRUD.TYPE_INSERT_BATCH);
+		super(layerName,CRUD.TYPE_INSERT_BATCH);
+		this.features=features;
 	}
 	
 	/**
@@ -69,7 +74,8 @@ public class ModifyParameter extends Parameters {
 	 * @param layerName the layer name
 	 */
 	public ModifyParameter(String sqlWhere,Feature feature,String layerName){
-		super(sqlWhere,SpatialRelation.Undefined,null,feature,layerName,CRUD.TYPE_UPDATE);
+		super(sqlWhere,SpatialRelation.Undefined,null,layerName,CRUD.TYPE_UPDATE);
+		this.feature=feature;
 	}
 	/**
 	 * 修改.
@@ -81,8 +87,24 @@ public class ModifyParameter extends Parameters {
 	 * @param layerName the layer name
 	 */
 	public ModifyParameter(String sqlWhere,SpatialRelation spatial,String wkt,Feature feature,String layerName){
-		super(sqlWhere,spatial,wkt,feature,layerName,CRUD.TYPE_UPDATE);
+		super(sqlWhere,spatial,wkt,layerName,CRUD.TYPE_UPDATE);
+		this.feature=feature;
 	}
 	
+	public Feature getFeature() {
+		return feature;
+	}
+
+	public void setFeature(Feature feature) {
+		this.feature = feature;
+	}
+
+	public List<Feature> getFeatures() {
+		return features;
+	}
+
+	public void setFeatures(List<Feature> features) {
+		this.features = features;
+	}
 	
 }

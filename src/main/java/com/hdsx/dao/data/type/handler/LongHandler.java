@@ -18,6 +18,6 @@ public class LongHandler extends ITypeHandler<Long>{
 		{
 			return (long) ((Boolean) source?1:0);
 		}
-		return null;
+		return 0L;
 	}
 }

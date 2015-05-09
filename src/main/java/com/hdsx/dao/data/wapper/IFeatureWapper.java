@@ -5,5 +5,7 @@ import com.hdsx.dao.data.Feature;
 
 public interface IFeatureWapper {
 
-	 Feature SeRow2Feature(SeRow row)throws Exception;
+	 abstract Feature SeRow2Feature(SeRow row) throws Exception;
+	 
+	 abstract SeRow   Feature2SeRow(Feature feature,SeRow row) throws Exception;
 }

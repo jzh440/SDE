@@ -1,8 +1,5 @@
 package com.hdsx.dao.parameter;
 
-import java.util.List;
-
-import com.hdsx.dao.data.Feature;
 
 /**
  * 
@@ -21,35 +18,21 @@ public class Parameters {
 	
 	private String layerName;
 
-	private Feature feature;
-	
-	private List<Feature> features;
-	
 	public Parameters(){}
 	
-	public Parameters(Feature feature,String layerName,CRUD crud){
-		this.feature=feature;
+	public Parameters(String layerName,CRUD crud){
 		this.layerName=layerName;
 		this.crud=crud;
 	}
-	public Parameters(List<Feature> features,String layerName,CRUD crud){
-		this.features=features;
+	public Parameters(String sqlWhere,String layerName,CRUD crud){
+		this.sqlWhere=sqlWhere;
 		this.layerName=layerName;
 		this.crud=crud;
 	}
-	
 	public Parameters(String sqlWhere,SpatialRelation spatial,String wkt,String layerName,CRUD crud){
 		this.sqlWhere=sqlWhere;
 		this.spatial=spatial;
 		this.wkt=wkt;
-		this.layerName=layerName;
-		this.crud=crud;
-	}
-	public Parameters(String sqlWhere,SpatialRelation spatial,String wkt,Feature feature,String layerName,CRUD crud){
-		this.feature=feature;
-		this.spatial=spatial;
-		this.wkt=wkt;
-		this.feature=feature;
 		this.layerName=layerName;
 		this.crud=crud;
 	}
@@ -85,21 +68,6 @@ public class Parameters {
 		this.layerName = layerName;
 	}
 
-	public Feature getFeature() {
-		return feature;
-	}
-
-	public void setFeature(Feature feature) {
-		this.feature = feature;
-	}
-
-	public List<Feature> getFeatures() {
-		return features;
-	}
-
-	public void setFeatures(List<Feature> features) {
-		this.features = features;
-	}
 
 	public CRUD getCrud() {
 		return crud;

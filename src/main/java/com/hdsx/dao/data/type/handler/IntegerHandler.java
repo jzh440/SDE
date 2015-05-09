@@ -19,6 +19,6 @@ public class IntegerHandler extends ITypeHandler<Integer>{
 		{
 			return (int) ((Boolean) source?1:0);
 		}
-		return null;
+		return 0;
 	}
 }

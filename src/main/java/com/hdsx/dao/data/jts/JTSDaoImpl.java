@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
 import com.esri.sde.sdk.client.SeConnection;
 import com.hdsx.dao.data.sde.SDEDao;
 import com.hdsx.dao.data.sde.SDEDaoImpl;
+import com.hdsx.dao.exception.CRUDException;
 import com.hdsx.dao.parameter.Parameters;
 import com.hdsx.dao.pool.ConnectionManager;
 
@@ -20,7 +21,7 @@ public class JTSDaoImpl implements JTSDao {
 		        new Class[]{SDEDao.class},
 		        new DaoInvokeHandler());
 	}
-	public Object CRUDMethod(Parameters parameters) {
+	public Object CRUDMethod(Parameters parameters) throws CRUDException{
 		// TODO Auto-generated method stub
 		Object obj=null;
 		switch(parameters.getCrud())
@@ -38,22 +39,22 @@ public class JTSDaoImpl implements JTSDao {
 		return obj;
 	}
 
-	protected Object insert(Parameters parameters){
+	protected Object insert(Parameters parameters)throws CRUDException{
 		
 		return daoProxy.insert(parameters);
 	}
 	
-	protected Object delete(Parameters parameters){
+	protected Object delete(Parameters parameters)throws CRUDException{
 		
 		return daoProxy.delete(parameters);
 	}
 	
-	protected Object update(Parameters parameters){
+	protected Object update(Parameters parameters)throws CRUDException{
 		
 		return daoProxy.update(parameters);
 	}
 	
-	protected Object query(Parameters parameters){
+	protected Object query(Parameters parameters)throws CRUDException{
 		
 		return daoProxy.query(parameters);
 	}
