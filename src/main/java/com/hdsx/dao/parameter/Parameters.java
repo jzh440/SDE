@@ -10,7 +10,7 @@ public class Parameters {
 
 	private CRUD crud=CRUD.TYPE_QUERY;
 	
-	private SpatialRelation spatial;
+	private SpatialRelation spatial=SpatialRelation.Undefined;
 	
 	private String wkt;
 	
@@ -76,5 +76,5 @@ public class Parameters {
 	public void setCrud(CRUD crud) {
 		this.crud = crud;
 	}
-	
+
 }

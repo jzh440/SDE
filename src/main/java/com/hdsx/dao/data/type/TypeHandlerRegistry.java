@@ -7,6 +7,7 @@ import com.hdsx.dao.data.type.handler.BooleanHandler;
 import com.hdsx.dao.data.type.handler.BytesHandler;
 import com.hdsx.dao.data.type.handler.DateHandler;
 import com.hdsx.dao.data.type.handler.DoubleHandler;
+import com.hdsx.dao.data.type.handler.GeometryHandler;
 import com.hdsx.dao.data.type.handler.IntegerHandler;
 import com.hdsx.dao.data.type.handler.LongHandler;
 import com.hdsx.dao.data.type.handler.StringHandler;
@@ -53,7 +54,7 @@ public class TypeHandlerRegistry {
 	   ich=new ChainHandler(new LongHandler(),ich);
 	   ich=new ChainHandler(new StringHandler(),ich);
 	   ich=new ChainHandler(new DateHandler(),ich);
-	  // ich=new ChainHandler(new GeometryHandler(),ich);
+	   ich=new ChainHandler(new GeometryHandler(),ich);
 	   for (String typeHandler: typeHandlerList) {
 		  ich=new ChainHandler((ITypeHandler<?>) Class.forName(typeHandler).newInstance(),ich);
 	   }	

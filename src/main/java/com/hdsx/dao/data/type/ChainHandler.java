@@ -1,12 +1,11 @@
 package com.hdsx.dao.data.type;
 
-import com.hdsx.dao.exception.TypeException;
 
 public class ChainHandler implements IChainHandler{
 	private ITypeHandler<?> typeHandler;
 	private IChainHandler handler;
 	@Override
-	public Object handle(JavaType javaType,Object source) throws SecurityException, NoSuchMethodException,TypeException
+	public Object handle(JavaType javaType,Object source) throws SecurityException, NoSuchMethodException,Exception
 	{
 		Object value = null;
 		if(typeHandler.getReturnType().equals(javaType.getJavaType()))

@@ -1,12 +1,19 @@
 package com.hdsx.dao.data;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.vividsolutions.jts.geom.Geometry;
 
 
-public class Feature {
+public class Feature implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	private Map<String,Object> attributes=new LinkedHashMap<String,Object>();
 	

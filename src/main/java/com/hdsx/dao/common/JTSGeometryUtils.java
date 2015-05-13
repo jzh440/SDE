@@ -1,5 +1,10 @@
 package com.hdsx.dao.common;
 
+import java.util.ArrayList;
+
+import com.esri.sde.sdk.client.SeException;
+import com.esri.sde.sdk.client.SeShape;
+import com.esri.sde.sdk.geom.SeGeometryException;
 import com.vividsolutions.jts.geom.Geometry;
 
 // TODO: Auto-generated Javadoc
@@ -48,5 +53,22 @@ public class JTSGeometryUtils{
 	 */
 	public static Geometry WKBToGeometry(byte[] wkb) {
 	   return WKBUtil.reader(wkb);
+	}
+	
+	public static Geometry sde2jts(SeShape shape) throws SeException{
+		ArrayList<?> list=shape.asWKB(shape.getWKBSize());
+		try {
+			double[][][] coords=shape.getAllCoords();
+			for(int i=0;i<coords.length;i++)
+			{
+				System.out.println(coords[0]);
+			}
+			System.out.println(shape.toSeGeometry().asText());
+		} catch (SeGeometryException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		byte[] wkb=(byte[]) list.get(1);
+		return WKBToGeometry(wkb);
 	}
 }

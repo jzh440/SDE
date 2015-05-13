@@ -25,12 +25,12 @@ public class SDEObjectPoolConfig  extends GenericObjectPoolConfig {
 			sdePort = dbProps.getProperty("SDEPort");
 			sdeUserName = dbProps.getProperty("SDEUserName");
 			sdePassword = dbProps.getProperty("SDEPassword");
-			instance.setMinIdle(new Integer(dbProps.getProperty("maxTotal",DEFAULT_MAX_TOTAL+"")).intValue());
-			instance.setMaxIdle(new Integer(dbProps.getProperty("maxIdle",DEFAULT_MAX_IDLE+"")).intValue());
-			instance.setMaxTotal(new Integer(dbProps.getProperty("minIdle",DEFAULT_MIN_IDLE+"")).intValue());
-			instance.setMaxWaitMillis(new Integer(dbProps.getProperty("maxWaitMillis",DEFAULT_MAX_WAIT_MILLIS+"")).intValue());
+			setMinIdle(new Integer(dbProps.getProperty("minIdle",DEFAULT_MIN_IDLE+"")).intValue());
+			setMaxIdle(new Integer(dbProps.getProperty("maxIdle",DEFAULT_MAX_IDLE+"")).intValue());
+			setMaxTotal(new Integer(dbProps.getProperty("maxTotal",DEFAULT_MAX_TOTAL+"")).intValue());
+			setMaxWaitMillis(new Integer(dbProps.getProperty("maxWaitMillis",DEFAULT_MAX_WAIT_MILLIS+"")).intValue());
 		} catch (Exception e) {
-			//log.error("读取数据库连接配置文件出错");
+			e.printStackTrace();
 		}
 	}
 	

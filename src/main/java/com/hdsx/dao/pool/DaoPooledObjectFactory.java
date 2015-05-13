@@ -15,6 +15,7 @@ public class DaoPooledObjectFactory extends BasePooledObjectFactory<SeConnection
 		// TODO Auto-generated method stub
 		conn = new SeConnection(instance.sdeHost, instance.sdePort,
 				null, instance.sdeUserName, instance.sdePassword);
+		//conn.testServer(1000);
 		return conn;
 	}
 
