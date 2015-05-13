@@ -1,10 +1,5 @@
 package com.hdsx.dao.common;
 
-import java.util.ArrayList;
-
-import com.esri.sde.sdk.client.SeException;
-import com.esri.sde.sdk.client.SeShape;
-import com.esri.sde.sdk.geom.SeGeometryException;
 import com.vividsolutions.jts.geom.Geometry;
 
 // TODO: Auto-generated Javadoc
