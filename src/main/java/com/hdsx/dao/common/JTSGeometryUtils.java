@@ -55,20 +55,4 @@ public class JTSGeometryUtils{
 	   return WKBUtil.reader(wkb);
 	}
 	
-	public static Geometry sde2jts(SeShape shape) throws SeException{
-		ArrayList<?> list=shape.asWKB(shape.getWKBSize());
-		try {
-			double[][][] coords=shape.getAllCoords();
-			for(int i=0;i<coords.length;i++)
-			{
-				System.out.println(coords[0]);
-			}
-			System.out.println(shape.toSeGeometry().asText());
-		} catch (SeGeometryException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		byte[] wkb=(byte[]) list.get(1);
-		return WKBToGeometry(wkb);
-	}
 }
